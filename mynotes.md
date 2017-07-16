@@ -30,7 +30,7 @@ Treat DataFrame like sql tables.  Here's how to access their columns.
     - {column_name}**.replace**(*value_to_replace, desired_value, inplace=boolean*)
         - Replace specific values in a column with a specific value
         - e.g.: `df.birthwgt_lb.replace(na_vals, np.nan, inplace=True)`
-    - df**.loc**[*{label or condition}, {column_to_update}*] = *{value to enter}*
+    - **df.loc**[*{label or condition}, {column_to_update}*] = *{value to enter}*
         - Enter a value in specific locations in a column.
         - e.g.: `df.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan`
 - **Summarize data:**
