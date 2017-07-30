@@ -35,7 +35,6 @@ def ValidatePregnum(responses):
     preg_map = nsfg.MakePregMap(preg_data)
 
     # Set key for responses and preg_map
-    #
     for index, pregnum in responses.pregnum.iteritems():
         caseid = responses.caseid[index]
         indices = preg_map[caseid]
