@@ -28,6 +28,25 @@ def ReadFemResp(dct_file = '2002FemResp.dct',
     # CleanFemResp(df)
     return df
 
+def ValidatePregnum(responses):
+
+    # Read pregnancy data and create a dictionary with the mapped values.
+    preg_data = nsfg.ReadFemPreg()
+    preg_map = nsfg.MakePregMap(preg_data)
+
+    # Set key for responses and preg_map
+    #
+    for index, pregnum in responses.pregnum.iteritems():
+        caseid = responses.caseid[index]
+        indices = preg_map[caseid]
+
+
+        if len(indices) != pregnum:
+            print(caseid)
+            return False
+            
+    return True
+
 def main(script):
     """Tests the functions in this module.
 
@@ -48,6 +67,7 @@ def main(script):
     assert(response_counts[4] == 611)
     assert(response_counts[5] == 305)
     assert(response_counts[6] == 150)
+    assert(ValidatePregnum(responses))
 
     print('%s: All tests passed.' % script)
 
