@@ -40,3 +40,59 @@ Treat DataFrame like sql tables.  Here's how to access their columns.
 DF columns are read as series.  Series are like arrays.
 - **Get element from series:** series[*{index}*]
 - **Get range from series:** series[*{start index}*:*{end index}*]
+
+# Chapter 2
+
+## Distributions
+
+You can write a function to build a histogram
+```
+hist = {}
+def build_hist(t):
+    for x in t:
+        hist[x] = hist.get(x, 0) + 1
+```
+Or use value_counts
+
+## Histograms
+In general, use matplotlib.pyplot()
+
+To plot a histogram using thinkstats functions:
+```
+import thinkplot
+thinkplot.Hist({histogram object})
+thinkplot.Show(xlabel='value', ylabel='frequency')
+```
+
+[thinkplot documentation](http://bit.ly/1sgoj7V)
+
+## Summary Statistics
+
+**Mean~average**: Measure of central tendency
+
+**Standard Dev**: Results within 1 standard dev are normal
+
+**Variance**: StDev^2.  Usually not very useful.
+
+### Effect size
+
+Difference btwn Means is useful, but has no indication of if results matter:
+`diff_means = group1.mean() - group2.mean()`
+
+Cohen's d divides by standard dev to show if the effect size is consequential:
+`cohens_d = (X1 - X2) / s` where `X1` and `X2` are the standard devs of the two groups and `s` is the pooled standard dev.
+
+```
+def CohenEffectSize(group1, group2):
+    diff = group1.mean() - group2.mean()
+
+    var1 = group1.var()
+    var2 = group2.var()
+    n1, n2 = len(group1), len(group2)
+
+    pooled_var = (n1 * var1 + n2 * var2) / (n1 + n2)
+    d = diff / math.sqrt(pooled_var)
+    return d
+```
+
+
