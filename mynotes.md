@@ -68,9 +68,11 @@ thinkplot.Show(xlabel='value', ylabel='frequency')
 
 ## Summary Statistics
 
-Mean~average: Measure of central tendency
-Standard Dev: Results within 1 standard dev are normal
-Variance: StDev^2.  Usually not very useful.
+**Mean~average**: Measure of central tendency
+
+**Standard Dev**: Results within 1 standard dev are normal
+
+**Variance**: StDev^2.  Usually not very useful.
 
 ### Effect size
 
