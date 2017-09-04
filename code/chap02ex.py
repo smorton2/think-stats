@@ -55,11 +55,11 @@ def main(script):
     assert(mode == 39)
 
     # test AllModes
-    modes = AllModes(hist)
-    assert(modes[0][1] == 4693)
+    #modes = AllModes(hist)
+    #assert(modes[0][1] == 4693)
 
-    for value, freq in modes[:5]:
-        print(value, freq)
+    #for value, freq in modes[:5]:
+    #    print(value, freq)
 
     print('%s: All tests passed.' % script)
 
