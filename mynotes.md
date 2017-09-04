@@ -94,5 +94,28 @@ def CohenEffectSize(group1, group2):
     d = diff / math.sqrt(pooled_var)
     return d
 ```
+# Chapter 3
 
+**Probability Mass Function (PMF)**
+- Stores probability of occurrence of each value (SudoSQL: `COUNT_IF(value=x)/COUNT(1)`)
+- Use [`pyplot.hist(x, density=True)`](https://matplotlib.org/devdocs/api/_as_gen/matplotlib.pyplot.hist.html) to plot PMF
 
+**Manipulating DataFrames**
+
+Create dataframe from numpy array and name the columns and indexes (rows)
+```
+{{import everything}}
+array = np.random.randn(4, 2)
+columns = ['A', 'B']
+index = ['a', 'b', 'c', 'd']
+df = pandas.DataFrame(array, columns=columns, index=index)
+```
+
+Index to pull values from a column `df['A']`
+
+Use `df.loc['a']` to pull values from row 'a'
+
+Use `ds.iloc[0]` to pull values from row by the index number
+
+You can also use a slice to pull a range of rows by position or label
+`df['a':'c']` OR `df[0:3]`
