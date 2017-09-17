@@ -126,3 +126,35 @@ You can also use a slice to pull a range of rows by position or label
 `CDF(x)` computes the % of values <= x (i.e. probability a value will be less than or equal to x)
 
 Graph of a CDF will be a step function.
+
+# Chapter 5
+
+You can use analytic distributions to model empirical distributions.
+
+**Exponential Distribution**
+
+- described by `1-e^(-lambda*x)`
+- Lambda determines shape, big lambda = big curve
+- If distribution follows exponential, then complementary CDF on a log scale will be a straight line.
+- Remember `lambda` is a Python keyword
+
+**Normal Distribution**
+
+Use *normal probability plot* to determine if data follows a normal distribution
+1. Sort values in sample
+2. Generate random sample with same sample size & sort it (use mean = 0 & standard dev = 1)
+3. Plot sorted values vs random values
+Result is straight line with `intercept = mean` & `slope = standard dev`
+
+**Lognormal Distribution**
+
+When log of set of values has normal distribution.
+- plot on logx scale, looks like normal distribution
+- Test fit using normal probability plot of log of values.
+
+**Pareto Distribution**
+
+`1-(x/x_m)^(-alpha)`
+- x_m = minimum possible value for x
+- alpha = shape
+- Complimentary CDF on a log-log scale looks like a straight line
