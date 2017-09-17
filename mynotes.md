@@ -85,7 +85,6 @@ Cohen's d divides by standard dev to show if the effect size is consequential:
 ```
 def CohenEffectSize(group1, group2):
     diff = group1.mean() - group2.mean()
-
     var1 = group1.var()
     var2 = group2.var()
     n1, n2 = len(group1), len(group2)
@@ -119,3 +118,11 @@ Use `ds.iloc[0]` to pull values from row by the index number
 
 You can also use a slice to pull a range of rows by position or label
 `df['a':'c']` OR `df[0:3]`
+
+# Chapter 4
+
+**Cumulative Distribution Functions (CDFs)** map from a value to its percentile rank.  They can help combat the issues of having too many or too few bins that happen when you have a large number of values in a histogram or PMF.  They also make it much easier to visually compare distributions.
+
+`CDF(x)` computes the % of values <= x (i.e. probability a value will be less than or equal to x)
+
+Graph of a CDF will be a step function.
